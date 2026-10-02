@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CHEIKH GÀNNAR | Vente de poussins</title>
+
+<meta name="description"
+content="CHEIKH GÀNNAR - Vente de poussins à Nimzat. Des poussins de qualité pour votre élevage.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f9f5;
+    color:#172116;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #e5e9e2;
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    font-size:21px;
+    letter-spacing:-.5px;
+}
+
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    background:#f5b51b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    box-shadow:0 8px 20px rgba(245,181,27,.25);
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#344031;
+    font-weight:600;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#d68d00;
+}
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 80% 20%,rgba(255,206,67,.32),transparent 30%),
+      linear-gradient(135deg,#fffdf5,#f1f7ed);
+}
+
+.hero-content{
+    max-width:1150px;
+    width:100%;
+    margin:auto;
+    padding:80px 22px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    padding:8px 14px;
+    border-radius:50px;
+    background:#fff4cf;
+    color:#9a6700;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(43px,6vw,76px);
+    line-height:.98;
+    letter-spacing:-3px;
+    margin-bottom:25px;
+}
+
+h1 span{
+    color:#e5a800;
+}
+
+.hero p{
+    max-width:570px;
+    font-size:18px;
+    color:#596254;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 21px;
+    border-radius:13px;
+    text-decoration:none;
+    font-weight:800;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#182718;
+    color:white;
+    box-shadow:0 10px 25px rgba(24,39,24,.18);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:white;
+    color:#182718;
+    border:1px solid #dce3d8;
+}
+
+.chick-stage{
+    min-height:410px;
+    border-radius:38px;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 45%,#ffe88a 0 20%,transparent 21%),
+      linear-gradient(145deg,#fff4bd,#e8f2df);
+    box-shadow:0 30px 70px rgba(43,65,35,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.chick{
+    font-size:170px;
+    filter:drop-shadow(0 25px 15px rgba(85,65,20,.18));
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(-2deg)}
+    50%{transform:translateY(-12px) rotate(2deg)}
+}
+
+.chick-label{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
+    padding:15px 18px;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(10px);
+    border-radius:17px;
+    font-weight:800;
+    text-align:center;
+}
+
+section{
+    padding:85px 22px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-head{
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 45px;
+}
+
+.section-head h2{
+    font-size:42px;
+    letter-spacing:-1.5px;
+    margin-bottom:12px;
+}
+
+.section-head p{
+    color:#667060;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e6ebe3;
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 12px 35px rgba(38,58,31,.06);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(38,58,31,.10);
+}
+
+.icon{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    background:#fff3c7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:9px;
+    font-size:21px;
+}
+
+.card p{
+    color:#687163;
+    font-size:15px;
+}
+
+.about{
+    background:#182718;
+    color:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:45px;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#cdd6c9;
+    margin-bottom:20px;
+}
+
+.info-box{
+    display:grid;
+    gap:14px;
+}
+
+.info{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:17px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+}
+
+.info strong{
+    display:block;
+}
+
+.info small{
+    color:#bac6b6;
+}
+
+.order{
+    background:linear-gradient(135deg,#fff6cf,#edf6e8);
+}
+
+.order-box{
+    background:white;
+    max-width:800px;
+    margin:auto;
+    padding:45px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 20px 55px rgba(44,65,37,.09);
+}
+
+.order-box h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.order-box p{
+    color:#667060;
+    margin-bottom:25px;
+}
+
+footer{
+    background:#101810;
+    color:#aeb9aa;
+    padding:35px 22px;
+    text-align:center;
+}
+
+footer strong{
+    color:white;
+}
+
+footer .footer-logo{
+    color:white;
+    font-weight:900;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        padding-top:55px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .chick-stage{
+        min-height:330px;
+    }
+
+    .chick{
+        font-size:130px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-head h2,
+    .about h2,
+    .order-box h2{
+        font-size:34px;
+    }
+
+    .order-box{
+        padding:30px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            <div class="logo-mark">🐥</div>
+            CHEIKH GÀNNAR
+        </div>
+
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#poussins">Nos poussins</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <div>
+
+            <div class="badge">
+                🐥 ÉLEVAGE & VENTE DE POUSSINS
+            </div>
+
+            <h1>
+                Donnez un bon départ à votre <span>élevage.</span>
+            </h1>
+
+            <p>
+                CHEIKH GÀNNAR vous propose des poussins destinés
+                aux éleveurs qui souhaitent démarrer ou développer
+                leur activité dans de bonnes conditions.
+            </p>
+
+            <div class="buttons">
+
+                <!-- REMPLACE LE NUMÉRO PAR TON NUMÉRO WHATSAPP -->
+
+               
